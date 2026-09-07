@@ -31,3 +31,17 @@ class Blog(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.title
+
+class About(models.Model):
+    about_name=models.CharField(max_length=100)
+    description=models.TextField(max_length=225)
+
+    def __str__(self):
+        return self.about_name
+    class Meta:
+        verbose_name_plural='About'
+class SocialLink(models.Model):
+    s_name=models.CharField(max_length=100)
+    link=models.URLField(max_length=100)
+    def __str__(self):
+        return self.s_name
